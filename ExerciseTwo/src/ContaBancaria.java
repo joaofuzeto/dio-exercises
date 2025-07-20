@@ -2,28 +2,13 @@ public class ContaBancaria {
 
 
     private String userName;
-    private int accountNumber;
     private double initialDeposit;
     private double balance = 0.0;
+    private double overdraftInitial;
     private double overdraft;
 
-    public ContaBancaria(String userName, int accountNumber, double initialDeposit) {
-        this.userName = userName;
-        this.accountNumber = accountNumber;
-        this.initialDeposit = initialDeposit;
-        this.balance = initialDeposit;
-
-        if(initialDeposit <= 500.0){
-            this.overdraft = 50.0;
-        } else {
-            this.overdraft = initialDeposit * 0.5;
-        }
-
-        System.out.println("Olá " + userName + ", sua conta de número " + accountNumber +
-                " tem um saldo atual de R$" + balance + ", sendo R$" + overdraft +
-                " o valor atribuído e disponível de cheque especial.");
+    public ContaBancaria(){
     }
-
 
     public String getUserName() {
         return userName;
@@ -33,16 +18,12 @@ public class ContaBancaria {
         this.userName = userName;
     }
 
-    public int getAccountNumber() {
-        return accountNumber;
-    }
-
-    public void setAccountNumber(int accountNumber) {
-        this.accountNumber = accountNumber;
-    }
-
-    public double getBalance() {
+    public double getBalance(){
         return balance;
+    }
+
+    public void setBalance(double balance){
+        this.balance = balance;
     }
 
     public double getInitialDeposit(){
@@ -53,7 +34,19 @@ public class ContaBancaria {
         this.initialDeposit = initialDeposit;
     }
 
-    public double getOverdraft(){
+    public double getOverdraftInitial(){
+        return overdraftInitial;
+    }
+
+    public void setOverdraftInitial(double overdraftInitial){
+        this.overdraftInitial = overdraftInitial;
+    }
+
+    public double getOverdraft() {
         return overdraft;
+    }
+
+    public void setOverdraft(double overdraft) {
+        this.overdraft = overdraft;
     }
 }
